@@ -5,8 +5,8 @@ const ToDoList = () => {
 	const [listValue, setListValue] = useState([]);
 	const [counterValue, setCounterValue] = useState(0);
 
-	const addToDo = (content) => {
-		let NewtoDo = [...listValue, content];
+	const addToDo = (text) => {
+		let NewtoDo = [...listValue, text];
 		setListValue(NewtoDo);
 	};
 
@@ -20,7 +20,7 @@ const ToDoList = () => {
 
 	const DeleteItems = (indexItem) => {
 		setListValue((prevState) =>
-			prevState.filter((content, index) => index !== indexItem)
+			prevState.filter((text, index) => index !== indexItem)
 		);
 		setCounterValue(counterValue - 1);
 	};
@@ -32,7 +32,7 @@ const ToDoList = () => {
 				<input
 					type="text"
 					className="form-control"
-					placeholder="Username"
+					placeholder="Add a task"
 					aria-label="Username"
 					aria-describedby="basic-addon1"
 					onChange={(event) => setInputValue(event.target.value)}
@@ -41,21 +41,21 @@ const ToDoList = () => {
 				/>
 			</div>
 			<ul>
-				{listValue.map((content, index) => (
+				{listValue.map((text, index) => (
 					<li key={index} className="list-group-item index">
-						{content}
+						{text}
 						<button
-							className="btn justify-content-end "
+							className="btn justify-text-end "
 							onClick={() => DeleteItems(index)}>
-							<i className="fas fa-times" />
+							<i className="fas fa-times float-end" />
 						</button>
 					</li>
 				))}
-				<li className="list-group-item">
+				<li className="list-group-item float-start border-0">
 					{"" +
 						(counterValue == 0
-							? "No tasks, add a task"
-							: counterValue + " items left")}
+							? "Nothign to do, chill then!"
+							: counterValue + " still to do...")}
 				</li>
 			</ul>
 		</div>

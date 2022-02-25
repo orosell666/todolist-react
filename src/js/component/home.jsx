@@ -7,12 +7,12 @@ import rigoImage from "../../img/rigo-baby.jpg";
 //create your first component
 const Home = () => {
 	return (
-		<div className="justify-content-center">
+		<div className="text-center">
 			<div>
 				<h1>To Do List</h1>
 			</div>
 
-			<div>
+			<div className="container">
 				<ToDoList />
 			</div>
 		</div>
