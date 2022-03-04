@@ -12,7 +12,7 @@ const ToDoList = () => {
 
 	const HandleKey = (event) => {
 		if (event.key === "Enter" && inputValue !== " " && inputValue !== "") {
-			addToDo(listValue);
+			addToDo(inputValue);
 			setCounterValue(counterValue + 1);
 			setInputValue("");
 		}
